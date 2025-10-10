@@ -6,7 +6,14 @@ int main()
     int cont = 30;
     while (cont > 0)
     {
-        printf("%d ", cont);
+        if (cont % 4 == 0)
+        {
+            printf("[%d] ", cont);
+        }
+        else
+        {
+            printf("%d ", cont);
+        }
         cont--;
     }
 
