@@ -1,34 +1,39 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdlib.h>
 
-int main() {
-    int i=0, numero[20], cont_m5=0, cont_div3=0;
-
-
+int main()
+{ // usando while
+    int i[20], cont = 0, qtdb = 0, qtdc = 0;
     srand(time(NULL));
+    printf("SORTEIO DE 20 NÚMEROS DE 0 a 10: \n \n");
+    printf("Números acima de 5: ");
+    while (cont < 20)
+    {
+        i[cont] = rand() % 11;
 
-    printf("Sorteio de 20 números entre 0 e 10:\n\n");
-
-    while(i < 20) {
-        numero[i] = rand() % 11; 
-        if(numero[i] > 5){
-            cont_m5++;
-        }else if(numero[i] % 3 == 0){
-            cont_div3++;
+        if (i[cont] > 5)
+        {
+            printf("%d  ", i[cont]);
+            qtdb = qtdb + 1;
         }
-         i++;
+        if (i[cont] % 3 == 0 && cont[i]!=0)
+        {
+            qtdc = qtdc + 1;
+        }
+        cont++;
     }
-    
-    printf("\nNúmeros sorteados maiores que 5:\n\n");
-    i=0;
-    while(i < 20) {
-        printf("%d ", numero[i]);
-    
+    cont = 0;
+
+    printf("\n\nNúmeros sorteados: ");
+    while (cont < 20)
+    {
+        printf("%d  ", i[cont]);
+        cont++;
     }
 
+    printf("\nQuantidade de números acima de 5: %d \n", qtdb);
+    printf("Quantidade de números divisíveis por 3: %d \n", qtdc);
 
     return 0;
-}
-   return 0;
 }
